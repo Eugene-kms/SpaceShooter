@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         override func didMove(to view: SKView) {
                 startField = SKEmitterNode(fileNamed: "Starfield")
                 startField.position = CGPoint(x: 0, y: 1472)
-                startField.advanceSimulationTime(12)
+                startField.advanceSimulationTime(15)
                 self.addChild(startField)
                 
                 startField.zPosition = -1
@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 scoreLabel.fontName = "AmericanTypewriter-Bold"
                 scoreLabel.fontSize = 36
                 scoreLabel.fontColor = UIColor.white
-                scoreLabel.position = CGPoint(x: 100, y: UIScreen.main.bounds.height - 50)
+                scoreLabel.position = CGPoint(x: 100, y: UIScreen.main.bounds.height - 100)
                 score = 0
                 
                 self.addChild(scoreLabel)
@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 alien.physicsBody?.isDynamic = true
                 
                 alien.physicsBody?.categoryBitMask = alienCategory
-                alien.physicsBody?.categoryBitMask = bulletCategory
+                alien.physicsBody?.contactTestBitMask = bulletCategory
                 alien.physicsBody?.collisionBitMask = 0
                 
                 self.addChild(alien)
@@ -150,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 bullet.physicsBody?.isDynamic = true
                 
                 bullet.physicsBody?.categoryBitMask = bulletCategory
-                bullet.physicsBody?.categoryBitMask = alienCategory
+                bullet.physicsBody?.contactTestBitMask = alienCategory
                 bullet.physicsBody?.collisionBitMask = 0
                 bullet.physicsBody?.usesPreciseCollisionDetection = true
                 

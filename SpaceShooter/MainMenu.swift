@@ -14,10 +14,10 @@ class MainMenu: SKScene {
                 starField.advanceSimulationTime(10)
                 
                 newGameButtonNode = self.childNode(withName: "newGameButton") as? SKSpriteNode
-                newGameButtonNode.texture = SKTexture(imageNamed: "Complexity")
+                newGameButtonNode.texture = SKTexture(imageNamed: "NewGame")
                 
                 levelGameButtonNode = self.childNode(withName: "levelButton") as? SKSpriteNode
-                levelGameButtonNode.texture = SKTexture(imageNamed: "NewGame")
+                levelGameButtonNode.texture = SKTexture(imageNamed: "Complexity")
                 
                 labelLevelNode = self.childNode(withName: "labelLevelButton") as? SKLabelNode
                 
